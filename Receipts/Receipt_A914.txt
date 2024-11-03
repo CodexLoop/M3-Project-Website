@@ -1,0 +1,15 @@
+Tulliyah Pakkari
+tulliyahp17@gmail.com
+0782798981
+-----------------------------------------
+Receipt for Order ID: A914
+Date: 2024-11-03 18:15
+-----------------------------------------
+Shipping Address:
+Address: 1 Craigie Drive, Montrose
+City: Pietermaritzburg
+Province: 50
+Postal Code: 3201
+PANADO (24) (ID: 4) - Quantity: 1, Price: R37.99, Line Total: R37.99
+Shipping Price: R50.00
+Total Amount: R87.99

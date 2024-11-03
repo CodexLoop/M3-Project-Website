@@ -1,0 +1,13 @@
+Tulliyah Pakkari
+tulliyahp17@gmail.com
+0782798981
+-----------------------------------------
+Receipt for Order ID: A318
+Date: 2024-11-03 17:42
+-----------------------------------------
+Shipping Method: Pick-up
+PANADO PAEDIATRIC (ID: 5) - Quantity: 1, Price: R38.99, Line Total: R38.99
+PANADO (24) (ID: 4) - Quantity: 1, Price: R37.99, Line Total: R37.99
+NUROFEN (24) (ID: 3) - Quantity: 1, Price: R75.99, Line Total: R75.99
+Shipping Price: R0.00
+Total Amount: R152.97

@@ -1,0 +1,12 @@
+Receipt for Order ID: A823
+Date: 2024-11-03 17:20
+Shipping Address:
+Address: 
+City: 
+Province: Select Province
+Postal Code: 
+
+Items Purchased:
+BENYLIN 4 FLU (ID: 8) - Quantity: 1, Price: R120.00, Line Total: R120.00
+Shipping Price: R0.00
+Total Amount: R120.00
