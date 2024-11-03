@@ -4,15 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using Townbush_Pharmacy_Website.Models;
 
 namespace Townbush_Pharmacy_Website
 {
     public partial class Products : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -33,6 +32,27 @@ namespace Townbush_Pharmacy_Website
         public string ToTitleCase(string str)
         {
             return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "BtnClick")
+            {
+                if (!User.Identity.IsAuthenticated)
+                {
+                    Response.Redirect("~/Cart.aspx");
+                    Session["Cart"] = "True";
+                }
+                else
+                {
+                    Session["Cart"] = "True";
+
+                    // Find the row index of the command source
+                    int rowIndex = Convert.ToInt32(e.CommandArgument);
+                    GridViewRow row = GridView1.Rows[rowIndex];
+                    Response.Redirect("Cart.aspx?id=" + rowIndex);
+                }
+            }
         }
     }
 }

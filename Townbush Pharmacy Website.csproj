@@ -147,6 +147,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\CaptureNewCust.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Lockout.aspx" />
@@ -159,6 +160,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\Stock.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Cart.aspx" />
@@ -183,8 +185,11 @@
     <Content Include="Custom_CSS\style.css" />
     <Content Include="Custom_JS\source.js" />
     <Content Include="Default.aspx" />
+    <Content Include="DownloadReceipt.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Payment.aspx" />
+    <Content Include="PlaceOrder.aspx" />
     <Content Include="Private\Web.config" />
     <None Include="Resources\beautiful.jpeg" />
     <None Include="Resources\beautiful1.jpeg" />
@@ -289,6 +294,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Services.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="Stock.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -302,6 +308,13 @@
     <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\CaptureNewCust.aspx.cs">
+      <DependentUpon>CaptureNewCust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\CaptureNewCust.aspx.designer.cs">
+      <DependentUpon>CaptureNewCust.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Confirm.aspx.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -309,6 +322,11 @@
     <Compile Include="Account\Confirm.aspx.designer.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\Customer.cs" />
+    <Compile Include="Account\CustomerDbContext.cs" />
+    <Compile Include="Account\CustomerService.cs" />
+    <Compile Include="Account\Employee.cs" />
+    <Compile Include="Account\EmployeeDbContext.cs" />
     <Compile Include="Account\Forgot.aspx.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -386,6 +404,13 @@
     <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\Stock.aspx.cs">
+      <DependentUpon>Stock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Stock.aspx.designer.cs">
+      <DependentUpon>Stock.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
       <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -418,6 +443,7 @@
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CartItem.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -432,6 +458,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DownloadReceipt.aspx.cs">
+      <DependentUpon>DownloadReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DownloadReceipt.aspx.designer.cs">
+      <DependentUpon>DownloadReceipt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -442,7 +475,22 @@
     <Compile Include="Insights.aspx.designer.cs">
       <DependentUpon>Insights.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApplicationRoleManager.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceOrder.aspx.cs">
+      <DependentUpon>PlaceOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlaceOrder.aspx.designer.cs">
+      <DependentUpon>PlaceOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Private\ManageProducts.aspx.cs">
       <DependentUpon>ManageProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -485,6 +533,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Stock.aspx.cs">
+      <DependentUpon>Stock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock.aspx.designer.cs">
+      <DependentUpon>Stock.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -495,6 +550,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Receipts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

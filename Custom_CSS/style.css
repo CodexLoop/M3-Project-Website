@@ -66,7 +66,7 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 0 0 1px 0;
 }
 
 html {
@@ -137,6 +137,7 @@ body.dark-theme {
 .container {
     max-width: 1120px;
     margin-inline: 1.5rem;
+    height: 263px;
 }
 
 .grid {

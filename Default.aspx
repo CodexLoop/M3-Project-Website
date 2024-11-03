@@ -5,11 +5,11 @@
     <main id="homepage" >
        <section id="hero_section">
            <div class="container">
-
+              
                <h1 class="home__name">
                     Townbush Pharmacy.
                 </h1>
-
+                
                <div class="home__info">
                     <p class="home__description">
                         Welcome! Now offering dietary and health insights. We offer the best advice. Click <a href="~/Insights" runat="server"><b>Health Insights</b></a> to check it out!
@@ -155,5 +155,6 @@
                 </div>
              </section>
     </main>
+         <br /><br /><br />     <br /><br /><br />     <br /><br /><br />
 
 </asp:Content>

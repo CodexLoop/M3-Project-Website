@@ -24,6 +24,24 @@ namespace Townbush_Pharmacy_Website
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
 
         /// <summary>
+        /// GreetingLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label GreetingLabel;
+
+        /// <summary>
+        /// AdminLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder AdminLinks;
+
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
