@@ -32,8 +32,119 @@
 </head>
 
 <body>
-    <form runat="server">
+    <!--== HEADER ==-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="~/" runat="server" class="nav__logo">
+                <span class="nav__logo-circle">T</span>
+                <span class="nav__logo-name">Townbush Pharmacy.</span>
+            </a>
 
+            <div class="nav__menu" id="nav-menu">
+                <span class="nav__title">Menu</span>
+
+                <h3 class="nav__name">Townbush</h3>
+
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="~/" runat="server" id="home_link" class="nav__link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="~/about" runat="server" id="about_link" class="nav__link">About</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="~/Products" runat="server" id="shop_link" class="nav__link">Shop</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="~/Insights" runat="server" id="insights_link" class="nav__link">Blog</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="~/Cart" runat="server" id="cart_link" class="nav__link">Cart</a>
+                    </li>
+
+                    <asp:PlaceHolder ID="AdminLinks" runat="server" Visible="false">
+                        <li class="nav__item">
+                            <a runat="server" id="stock_link" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a>
+                        </li>
+                    </asp:PlaceHolder>
+
+                    <li class="nav__item">
+                        <a href="~/Contact" runat="server" id="contact_link" class="nav__link nav__link-button">Contact Us</a>
+                    </li>
+
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="navbar-nav navbar-right">
+                                <li class="nav__item"><a runat="server" id="login_link" class="nav-link nav__link" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="navbar-nav navbar-right">
+                                <li class="nav__item"><a runat="server" id="account_link" class="nav-link nav__link" href="~/Account/Manage" title="Manage your account">Account</a></li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <LoggedInTemplate>
+                            <ul class="navbar-nav navbar-right">
+                                <li class="nav__item">
+                                    <asp:LoginStatus runat="server" CssClass="nav-link nav__link" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+                    <!--<stock/>-->
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <LoggedInTemplate>
+                            <contenttemplate>
+                                <ul class="navbar-nav navbar-right">
+                                    <asp:PlaceHolder ID="AdminLinks" runat="server" Visible="false">
+                                        <li class="nav__item">
+                                            <a runat="server" id="stock1_link" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a>
+                                        </li>
+                                    </asp:PlaceHolder>
+                                </ul>
+                            </contenttemplate>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+                    <!--<Customer details/>-->
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <LoggedInTemplate>
+                            <ul class="navbar-nav navbar-right">
+                                <li class="nav__item"><a runat="server" id="cus_link" class="nav-link nav__link" href="~/Account/CaptureNewCust" title="Capture Customer Details"></a></li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+                    <li class="nav__item">
+                        <asp:Label ID="GreetingLabel" runat="server" CssClass="nav__link"></asp:Label>
+                    </li>
+                </ul>
+
+                <!--Close button-->
+                <div class="nav__close" id="nav-close">
+                    <img src="Resources/close (1).png" alt="icon not supported by browser" height="12" width="12">
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <img src="Resources/menu (1).png" alt="icon not supported by browser" height="12" width="12">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -53,154 +164,63 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <!-- START CODING HERE! -->
-
-        <!--== HEADER ==-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="~/" runat="server" class="nav__logo">
-                    <span class="nav__logo-circle">T</span>
-                    <span class="nav__logo-name">Townbush Pharmacy.</span>
-                </a>
-
-                <div class="nav__menu" id="nav-menu">
-                    <span class="nav__title">Menu</span>
-
-                    <h3 class="nav__name">Townbush</h3>
-
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="~/" runat="server" id="home_link" class="nav__link">Home</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="~/about" runat="server" id="about_link" class="nav__link">About</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="~/Products" runat="server" id="shop_link" class="nav__link">Shop</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="~/Insights" runat="server" id="insights_link" class="nav__link">Blog</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="~/Cart" runat="server" id="cart_link" class="nav__link">Cart</a>
-                        </li>
-
-                        <asp:PlaceHolder ID="AdminLinks" runat="server" Visible="false">
-                            <li class="nav__item">
-                                <a runat="server" id="stock_link" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a>
-                            </li>
-                        </asp:PlaceHolder>
-
-                        <li class="nav__item">
-                            <a href="~/Contact" runat="server" id="contact_link" class="nav__link nav__link-button">Contact Us</a>
-                        </li>
-
-                        <asp:LoginView runat="server" ViewStateMode="Disabled">
-                            <AnonymousTemplate>
-                                <ul class="navbar-nav navbar-right">
-                                    <li class="nav__item"><a runat="server" id="login_link" class="nav-link nav__link" href="~/Account/Login">Log in</a></li>
-                                </ul>
-                            </AnonymousTemplate>
-                            <LoggedInTemplate>
-                                <ul class="navbar-nav navbar-right">
-                                    <li class="nav__item"><a runat="server" id="account_link" class="nav-link nav__link" href="~/Account/Manage" title="Manage your account">Account</a></li>
-                                </ul>
-                            </LoggedInTemplate>
-                        </asp:LoginView>
-
-                        <asp:LoginView runat="server" ViewStateMode="Disabled">
-                            <LoggedInTemplate>
-                                <ul class="navbar-nav navbar-right">
-                                    <li class="nav__item">
-                                        <asp:LoginStatus runat="server" CssClass="nav-link nav__link" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                    </li>
-                                </ul>
-                            </LoggedInTemplate>
-                        </asp:LoginView>
-
-                        <!--<stock/>-->
-                        <asp:LoginView runat="server" ViewStateMode="Disabled">
-                            <LoggedInTemplate>
-                                <contenttemplate>
-                                    <ul class="navbar-nav navbar-right">
-                                        <asp:PlaceHolder ID="AdminLinks" runat="server" Visible="false">
-                                            <li class="nav__item">
-                                                <a runat="server" id="stock1_link" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a>
-                                            </li>
-                                        </asp:PlaceHolder>
-                                    </ul>
-                                </contenttemplate>
-                            </LoggedInTemplate>
-                        </asp:LoginView>
-
-                        <!--<Customer details/>-->
-                        <asp:LoginView runat="server" ViewStateMode="Disabled">
-                            <LoggedInTemplate>
-                                <ul class="navbar-nav navbar-right">
-                                    <li class="nav__item"><a runat="server" id="cus_link" class="nav-link nav__link" href="~/Account/CaptureNewCust" title="Capture Customer Details"></a></li>
-                                </ul>
-                            </LoggedInTemplate>
-                        </asp:LoginView>
-
-                        <li class="nav__item">
-                            <asp:Label ID="GreetingLabel" runat="server" CssClass="nav__link"></asp:Label>
-                        </li>
-                    </ul>
-
-                    <!--Close button-->
-                    <div class="nav__close" id="nav-close">
-                        <img src="Resources/close (1).png" alt="icon not supported by browser" height="12" width="12">
-                    </div>
-                </div>
-
-                <div class="nav__buttons">
-                    <!-- Toggle button -->
-                    <div class="nav__toggle" id="nav-toggle">
-                        <img src="Resources/menu (1).png" alt="icon not supported by browser" height="12" width="12">
-                    </div>
-                </div>
-            </nav>
-        </header>
-
         <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
 
+
     <!--== FOOTER ==-->
-    <footer class="footer">
-        <div class="footer__container container grid">
-            <ul class="footer__links">
-                <li>
-                    <a href="About" class="footer__link">About</a>
-                </li>
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+            <div class="footer__box">
+                <h3 class="footer__title">Townbush</h3>
+                <p class="footer__description">Fresh stock of medication 2024</p>
+            </div>
 
-                <li>
-                    <a href="#services" class="footer__link">Services</a>
-                </li>
+            <div class="footer__box">
+                <h3 class="footer__title">EXPLORE</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Home</a></li>
+                    <li><a href="#featured" class="footer__link">Featured</a></li>
+                    <li><a href="#women" class="footer__link">Women's health</a></li>
+                    <li><a href="#new" class="footer__link">Men's health</a></li>
+                </ul>
+            </div>
 
-                <li>
-                    <a href="Products" class="footer__link">Products</a>
-                </li>
-            </ul>
+            <div class="footer__box">
+                <h3 class="footer__title">SUPPORT</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Product Help</a></li>
+                    <li><a href="#" class="footer__link">Customer Care</a></li>
+                    <li><a href="#" class="footer__link">Athorized Service</a></li>
+                </ul>
+            </div>
 
-            <span class="footer__copy">&#169; All Rights Reserved By
-                <a href="~/">Pharmaflow~Pioneers.</a>
-            </span>
+            <div class="footer__box">
+                <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-google'></i></a>
+            </div>
         </div>
+
+        <p class="footer__copy">&#169; 2024 Pharmaflow~Pioneers. All rights reserved</p>
     </footer>
+
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     </asp:PlaceHolder>
 
-    <!--== JAVASCRIPT ==-->
-    <script src="Custom_JS/source.js"></script>
-</body>
 
+    <!--================ SCROOL UP ================-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-up-arrow-alt'></i>
+    </a>
+</body>
 </html>
+
+<!--== JAVASCRIPT ==-->
+<script src="Custom_JS/source.js"></script>
