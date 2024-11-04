@@ -40,22 +40,44 @@ window.addEventListener('scroll', shadowHeader);
 /*================ SHOW SCROLL UP ================ */
 
 
-/*================ SCROLL SECTIONS ACTIVE LINK ================ */
-const sections = document.querySelectorAll('section[id]');
+// PAGE ACTIVE LINK
 
-const scrollActive = () => {
-    const scrollDown = window.scrollY;
-
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop - 58,
-            sectionId = current.getAttribute('id'),
-            sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
-
-        if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight)
-            sectionsClass.classList.add('active-link');
-        else
-            sectionsClass.classList.remove('active-link');
-    })
+function getActiveLink(e) {
+    if (e.target.classList.contains('nav__link')) {
+        let activeLink = e.target.id;
+        sessionStorage.setItem('ActiveLinkID', activeLink);
+    }
 }
-window.addEventListener('scroll', scrollActive);
+
+
+const listCollection = navMenu.getElementsByTagName('ul');
+const list = listCollection[0];
+
+list.addEventListener('click', (e) => { getActiveLink(e) });
+
+
+window.addEventListener('load', () => {
+    if (sessionStorage.getItem('PreviouslyActiveLinkID') == null) {
+        sessionStorage.setItem('ActiveLinkID', 'home_link');
+        sessionStorage.setItem('PreviouslyActiveLinkID', 'home_link');
+
+        currentNode = document.getElementById('home_link');
+        currentNode.classList.add('active-link');
+    }
+
+    else {
+        previousID = sessionStorage.getItem('PreviouslyActiveLinkID');
+        console.log("Hi")
+
+        previousNode = document.getElementById(previousID);
+
+        previousNode.classList.remove('active-link');
+
+        currentID = sessionStorage.getItem('ActiveLinkID');
+        currentNode = document.getElementById(currentID);
+        currentNode.classList.add('active-link');
+
+        sessionStorage.setItem('PreviouslyActiveLinkID', currentID);
+    }
+});
+

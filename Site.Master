@@ -11,24 +11,29 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <!--<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
 
     <!--== FAVICON ==-->
     <link href="~/Resources/logoIcon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!--== STYLESHEET ==-->
     <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
     <link rel="stylesheet" href="~/Custom_CSS/style.css" />
 
+    <!--== SCRIPTS ==-->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("GafzmVXQhZZcUZ_Ut");
+        })();
+    </script>
 </head>
 
 <body>
-    <!-- NB: Content goes inside the form! -->
-
     <form runat="server">
 
-        <!-- NB: Do not remove, I do not understand any of this! -->
-        <!-- Keep on top! -->
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -47,7 +52,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-         
+
         <!-- START CODING HERE! -->
 
         <!--== HEADER ==-->
@@ -65,59 +70,44 @@
 
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="~/" runat="server" class="nav__link active-link">Home</a>
+                            <a href="~/" runat="server" id="home_link" class="nav__link">Home</a>
                         </li>
 
                         <li class="nav__item">
-                            <a href="~/about" runat="server" class="nav__link">About Us</a>
+                            <a href="~/about" runat="server" id="about_link" class="nav__link">About</a>
                         </li>
 
                         <li class="nav__item">
-                            <a href="~/Products" runat="server" class="nav__link">Shop</a>
+                            <a href="~/Products" runat="server" id="shop_link" class="nav__link">Shop</a>
                         </li>
 
                         <li class="nav__item">
-                            <a href="~/Services" runat="server" class="nav__link">Services</a>
-                        </li>
-
-
-                        <li class="nav__item">
-                            <a href="~/Insights" runat="server" class="nav__link">Health Insights</a>
+                            <a href="~/Insights" runat="server" id="insights_link" class="nav__link">Blog</a>
                         </li>
 
                         <li class="nav__item">
-                            <a href="~/Cart" runat="server" class="nav__link">Cart</a>
+                            <a href="~/Cart" runat="server" id="cart_link" class="nav__link">Cart</a>
                         </li>
 
-                        <li class="nav__item">
-                            <a href="~/Contact" runat="server" class="nav__link nav__link-button">Contact Us</a>
-                        </li>
-
-                         <!-- Personalized Greeting
-                             <li  class="nav__item"><a runat="server" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a></li>
-                             -->
-                        <li class="nav__item">
-                            <asp:Label ID="GreetingLabel" runat="server" CssClass="nav__link"></asp:Label>
-                        </li>
-
-    
                         <asp:PlaceHolder ID="AdminLinks" runat="server" Visible="false">
-                             <li  class="nav__item"><a runat="server" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a></li>
+                            <li class="nav__item">
+                                <a runat="server" id="stock_link" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a>
+                            </li>
                         </asp:PlaceHolder>
-                        
-                       <%--<asp:PlaceHolder ID="CustomerLinks" runat="server" Visible="false">
-                             <li  class="nav__item"><a runat="server" class="nav-link nav__link" href="~/Cart" title="View your Cart">Cart</a></li>
-                        </asp:PlaceHolder>--%>
+
+                        <li class="nav__item">
+                            <a href="~/Contact" runat="server" id="contact_link" class="nav__link nav__link-button">Contact Us</a>
+                        </li>
 
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <ul class="navbar-nav navbar-right">
-                                    <li  class="nav__item"><a runat="server" class="nav-link nav__link" href="~/Account/Login">Log in</a></li>
+                                    <li class="nav__item"><a runat="server" id="login_link" class="nav-link nav__link" href="~/Account/Login">Log in</a></li>
                                 </ul>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 <ul class="navbar-nav navbar-right">
-                                    <li  class="nav__item"><a runat="server" class="nav-link nav__link" href="~/Account/Manage" title="Manage your account">Account</a></li>
+                                    <li class="nav__item"><a runat="server" id="account_link" class="nav-link nav__link" href="~/Account/Manage" title="Manage your account">Account</a></li>
                                 </ul>
                             </LoggedInTemplate>
                         </asp:LoginView>
@@ -125,38 +115,40 @@
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <LoggedInTemplate>
                                 <ul class="navbar-nav navbar-right">
-                                    <li  class="nav__item">
+                                    <li class="nav__item">
                                         <asp:LoginStatus runat="server" CssClass="nav-link nav__link" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                     </li>
                                 </ul>
                             </LoggedInTemplate>
                         </asp:LoginView>
-                                                
-                    <!--<stock/>-->
+
+                        <!--<stock/>-->
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <LoggedInTemplate>
-                                <ContentTemplate>
-                                <ul class="navbar-nav navbar-right">
-                                    <asp:PlaceHolder ID="AdminLinks" runat="server" Visible="false">
-                                    <li  class="nav__item"><a runat="server" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a></li>
-                                    </asp:PlaceHolder>
-                                </ul>
-                                 </ContentTemplate>
+                                <contenttemplate>
+                                    <ul class="navbar-nav navbar-right">
+                                        <asp:PlaceHolder ID="AdminLinks" runat="server" Visible="false">
+                                            <li class="nav__item">
+                                                <a runat="server" id="stock1_link" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a>
+                                            </li>
+                                        </asp:PlaceHolder>
+                                    </ul>
+                                </contenttemplate>
                             </LoggedInTemplate>
                         </asp:LoginView>
 
-                                            <!--<Customer details/>-->
+                        <!--<Customer details/>-->
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <LoggedInTemplate>
                                 <ul class="navbar-nav navbar-right">
-                                    <li  class="nav__item"><a runat="server" class="nav-link nav__link" href="~/Account/CaptureNewCust" title="Capture Customer Details"></a></li>
+                                    <li class="nav__item"><a runat="server" id="cus_link" class="nav-link nav__link" href="~/Account/CaptureNewCust" title="Capture Customer Details"></a></li>
                                 </ul>
                             </LoggedInTemplate>
                         </asp:LoginView>
 
-
-
-
+                        <li class="nav__item">
+                            <asp:Label ID="GreetingLabel" runat="server" CssClass="nav__link"></asp:Label>
+                        </li>
                     </ul>
 
                     <!--Close button-->
@@ -184,21 +176,20 @@
     <footer class="footer">
         <div class="footer__container container grid">
             <ul class="footer__links">
-                 <li>
+                <li>
                     <a href="About" class="footer__link">About</a>
-                 </li>
+                </li>
 
-                 <li>
+                <li>
                     <a href="#services" class="footer__link">Services</a>
-                 </li>
+                </li>
 
-                 <li>
+                <li>
                     <a href="Products" class="footer__link">Products</a>
-                 </li>
+                </li>
             </ul>
 
-            <span class="footer__copy">
-                &#169; All Rights Reserved By
+            <span class="footer__copy">&#169; All Rights Reserved By
                 <a href="~/">Pharmaflow~Pioneers.</a>
             </span>
         </div>
@@ -211,5 +202,5 @@
     <!--== JAVASCRIPT ==-->
     <script src="Custom_JS/source.js"></script>
 </body>
-    
+
 </html>
