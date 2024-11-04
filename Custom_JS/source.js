@@ -34,7 +34,35 @@ const shadowHeader = () => {
 }
 window.addEventListener('scroll', shadowHeader);
 
-/*================ EMAIL JS ================ */
+
+// EMAIL JS
+const contactForm = document.getElementById('main_form'),
+    contactMessage = document.getElementById('contact-message')
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    // serviceID - templateID - #form - publickey
+    emailjs.sendForm('service_qtf15fe', 'template_y1zjaxq', '#main_form', 'GafzmVXQhZZcUZ_Ut')
+        .then(() => {
+            // Show sent message
+            contactMessage.textContent = 'Message sent successfully ✅'
+
+            // Remove message after five seconds
+            setTimeout(() => {
+                contactMessage.textContent = ''
+            }, 5000)
+
+            // Clear input fields
+            contactForm.reset()
+
+        }, () => {
+            // Show error Message
+            contactMessage.textContent = 'Message not sent (service error) ❌'
+        })
+}
+contactForm.addEventListener('submit', sendEmail)
+
 
 
 // SHOW SCROLL UP
@@ -75,8 +103,6 @@ window.addEventListener('load', () => {
 
     else {
         previousID = sessionStorage.getItem('PreviouslyActiveLinkID');
-        console.log("Hi")
-
         previousNode = document.getElementById(previousID);
 
         previousNode.classList.remove('active-link');
