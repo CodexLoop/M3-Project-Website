@@ -85,7 +85,8 @@ namespace Townbush_Pharmacy_Website
                 try
                 {
                     userName = SanitizeUsername(userName);
-                    GreetingLabel.Text = "Hi, " + userName + "!";
+                    int index = userName.IndexOf('@');
+                    GreetingLabel.Text = (userName.Substring(index));
                 }
                 catch (Exception ex)
                 {

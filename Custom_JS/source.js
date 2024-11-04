@@ -35,33 +35,33 @@ const shadowHeader = () => {
 window.addEventListener('scroll', shadowHeader);
 
 
-// EMAIL JS
-const contactForm = document.getElementById('main_form'),
-    contactMessage = document.getElementById('contact-message')
+//// EMAIL JS
+//const contactForm = document.getElementById('main_form'),
+//    contactMessage = document.getElementById('contact-message')
 
-const sendEmail = (e) => {
-    e.preventDefault()
+//const sendEmail = (e) => {
+//    e.preventDefault()
 
-    // serviceID - templateID - #form - publickey
-    emailjs.sendForm('service_qtf15fe', 'template_y1zjaxq', '#main_form', 'GafzmVXQhZZcUZ_Ut')
-        .then(() => {
-            // Show sent message
-            contactMessage.textContent = 'Message sent successfully ✅'
+//    // serviceID - templateID - #form - publickey
+//    emailjs.sendForm('service_qtf15fe', 'template_y1zjaxq', '#main_form', 'GafzmVXQhZZcUZ_Ut')
+//        .then(() => {
+//            // Show sent message
+//            contactMessage.textContent = 'Message sent successfully ✅'
 
-            // Remove message after five seconds
-            setTimeout(() => {
-                contactMessage.textContent = ''
-            }, 5000)
+//            // Remove message after five seconds
+//            setTimeout(() => {
+//                contactMessage.textContent = ''
+//            }, 5000)
 
-            // Clear input fields
-            contactForm.reset()
+//            // Clear input fields
+//            contactForm.reset()
 
-        }, () => {
-            // Show error Message
-            contactMessage.textContent = 'Message not sent (service error) ❌'
-        })
-}
-contactForm.addEventListener('submit', sendEmail)
+//        }, () => {
+//            // Show error Message
+//            contactMessage.textContent = 'Message not sent (service error) ❌'
+//        })
+//}
+//contactForm.addEventListener('submit', sendEmail)
 
 
 
@@ -115,3 +115,38 @@ window.addEventListener('load', () => {
     }
 });
 
+
+// Function to trigger the button click in the nth row
+function triggerButtonClick(rowNumber) {
+    const index = rowNumber - 1;
+
+    const gridView = document.getElementById('<%= GridView1.ClientID %>');
+
+    if (gridView) {
+        const row = gridView.rows[index];
+        if (row) {
+            const button = row.querySelector('Button1');
+
+            if (button) {
+                button.click();
+                console.log("Button clicked")
+            } else {
+                console.log("Button not found in row " + rowNumber);
+            }
+        } else {
+            console.log("Row " + rowNumber + " not found.");
+        }
+    } else {
+        console.log("GridView not found.");
+    }
+}
+
+const shop = document.getElementById('shop')
+const products = shop.querySelectorAll('button-light')
+
+products.forEach(product => {
+    product.addEventListener('click', () => {
+        let row = product.getAttribute('data-prod-id')
+        triggerButtonClick(row)
+    });
+});
