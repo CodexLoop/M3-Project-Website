@@ -21,130 +21,20 @@
             </div>
         </section>
 
-        <!--===== ALL PRODUCTS =====-->
-        <section class="featured section" id="shop">
-            <h2 id="shop-title" class="section-title">All Products</h2>
+        <asp:Literal ID="LiteralProductList" runat="server"></asp:Literal>
 
-            <div class="featured__container bd-grid">
-                <article class="sneaker">
-                    <img src="Resources/2.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Aspirin</span>
-                    <span class="sneaker__price">$109.99</span>
-                    <a data-prod-id="1" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/3.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Nurofen</span>
-                    <span class="sneaker__price">$109.99</span>
-                    <a data-prod-id="2" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/4.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Panado Pills</span>
-                    <span class="sneaker__price">$109.99</span>
-                    <a data-prod-id="3" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/5.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Panado Syrup</span>
-                    <span class="sneaker__price">$79.99</span>
-                    <a data-prod-id="4" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/8.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Benylin</span>
-                    <span class="sneaker__price">$79.99</span>
-                    <a data-prod-id="5" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/10.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Allergex (30)</span>
-                    <span class="sneaker__price">$79.99</span>
-                    <a data-prod-id="6" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/9.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Allergex</span>
-                    <span class="sneaker__price">$79.99</span>
-                    <a data-prod-id="7" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/11.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Berocca</span>
-                    <span class="sneaker__price">$79.99</span>
-                    <a data-prod-id="8" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/12.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Zinplex Junior</span>
-                    <span class="sneaker__price">$129.99</span>
-                    <a data-prod-id="9" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/15.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Rennie Orange</span>
-                    <span class="sneaker__price">$129.99</span>
-                    <a data-prod-id="10" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/17.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Rennie Peppermint</span>
-                    <span class="sneaker__price">$129.99</span>
-                    <a data-prod-id="11" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/18.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Echinaforce Junior</span>
-                    <span class="sneaker__price">$129.99</span>
-                    <a data-prod-id="12" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/21.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">Echinaforce Drops</span>
-                    <span class="sneaker__price">$129.99</span>
-                    <a data-prod-id="13" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article class="sneaker">
-                    <img src="Resources/23.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">ACC200</span>
-                    <span class="sneaker__price">$129.99</span>
-                    <a data-prod-id="14" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
-
-                <article id="new_product" class="sneaker">
-                    <img src="Resources/24.png" alt="" class="sneaker__img">
-                    <span class="sneaker__name">ACC600</span>
-                    <span class="sneaker__price">$129.99</span>
-                    <a data-prod-id="15" href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
-                </article>
+        <%--<div class="sneaker__pages bd-grid">
+            <div>
+                <span class="sneaker__pag">1</span>
+                <span class="sneaker__pag">2</span>
+                <span class="sneaker__pag">3</span>
+                <span class="sneaker__pag">4</span>
+                <span class="sneaker__pag">&#8594;</span>
             </div>
-
-            <div class="sneaker__pages bd-grid">
-                <div>
-                    <span class="sneaker__pag">1</span>
-                    <span class="sneaker__pag">2</span>
-                    <span class="sneaker__pag">3</span>
-                    <span class="sneaker__pag">4</span>
-                    <span class="sneaker__pag">&#8594;</span>
-                </div>
-            </div>
-        </section>
+        </div>--%>
     </div>
 
-    <div style="display:flex; justify-content:center;">
+    <div style="display: none;">
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:G2Pmb2024ConnectionString  %>" SelectCommand="SELECT * FROM [Product] WHERE ([isPrescriptionMed] = @isPrescriptionMed)">
             <SelectParameters>
                 <asp:Parameter DefaultValue="FALSE" Name="isPrescriptionMed" Type="Boolean" />
@@ -180,4 +70,6 @@
             </asp:GridView>
         </div>
     </div>
+
+
 </asp:Content>

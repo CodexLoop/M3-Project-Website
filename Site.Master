@@ -19,8 +19,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!--== STYLESHEET ==-->
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
     <link rel="stylesheet" href="~/Custom_CSS/style.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
 
     <!--== SCRIPTS ==-->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -119,7 +119,7 @@
                             </LoggedInTemplate>
                         </asp:LoginView>
 
-                        <!--<stock/>-->
+                        <%--<!--<stock/>-->
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <LoggedInTemplate>
                                 <contenttemplate>
@@ -141,7 +141,7 @@
                                     <li class="nav__item"><a runat="server" id="cus_link" class="nav-link nav__link" href="~/Account/CaptureNewCust" title="Capture Customer Details"></a></li>
                                 </ul>
                             </LoggedInTemplate>
-                        </asp:LoginView>
+                        </asp:LoginView>--%>
 
                         <li class="nav__item">
                             <asp:Label ID="GreetingLabel" runat="server" CssClass="nav__link"></asp:Label>
@@ -154,8 +154,8 @@
                     </div>
                 </div>
 
+                <!-- Toggle button -->
                 <div class="nav__buttons">
-                    <!-- Toggle button -->
                     <div class="nav__toggle" id="nav-toggle">
                         <img src="Resources/menu (1).png" alt="icon not supported by browser" height="12" width="12">
                     </div>

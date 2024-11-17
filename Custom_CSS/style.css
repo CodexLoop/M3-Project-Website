@@ -299,6 +299,7 @@ body.dark-theme {
     color: var(--dark-color);
     font-weight: var(--font-bold);
     align-items: center;
+    cursor: pointer;
 }
 
 .button-icon {
@@ -405,7 +406,7 @@ body.dark-theme {
 @media screen and (max-width: 1150px) {
     .nav__menu {
         position: fixed;
-        top: -100%;
+        top: -120%;
         right: 0;
         background-color: hsla(0, 0%, 0%, .75);
         width: 100%;
@@ -698,6 +699,7 @@ body.dark-theme {
     background-color: var(--dark-color-lighten);
     border-radius: .5rem;
     transition: .3s;
+    text-align: center;
 }
 
 .sneaker__sale {
@@ -716,7 +718,7 @@ body.dark-theme {
     width: 220px;
     margin-top: var(--mb-3);
     margin-bottom: var(--mb-6);
-    transform: var(--rotate-img);
+    /*transform: var(--rotate-img);*/
     filter: drop-shadow(0 12px 8px rgba(0,0,0,.2));
 }
 
@@ -725,9 +727,13 @@ body.dark-theme {
     letter-spacing: .1rem;
     font-weight: var(--font-bold);
     color: var(--dark-color);
+    margin-bottom: 1.5rem;
+    padding:0;
+    line-height: 1;
 }
 
 .sneaker__name {
+    line-height: 1.2;
     margin-bottom: var(--mb-1);
 }
 
@@ -1612,7 +1618,7 @@ body.dark-theme {
         background-color: var(--black-color);
         color: var(--white-color);
         padding: 1.1rem 1.5rem;
-        margin-right: 2rem;
+        margin-right: .75rem;
     }
 
         .nav__link-button:hover {

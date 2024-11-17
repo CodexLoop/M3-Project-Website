@@ -161,6 +161,7 @@
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\Stock.aspx" />
+    <Content Include="Account\Supplier.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Cart.aspx" />
@@ -183,6 +184,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Custom_CSS\style.css" />
+    <Content Include="Custom_CSS\tablestyle.css" />
     <Content Include="Custom_JS\source.js" />
     <Content Include="Default.aspx" />
     <Content Include="DownloadReceipt.aspx" />
@@ -445,6 +447,13 @@
     </Compile>
     <Compile Include="Account\Stock.aspx.designer.cs">
       <DependentUpon>Stock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Supplier.aspx.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Supplier.aspx.designer.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
       <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>

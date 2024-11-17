@@ -82,12 +82,12 @@
         <asp:TextBox ID="TextBoxAdress" runat="server" BorderStyle="Solid" Width="100%" Height="30px"></asp:TextBox>
          </div>
 
-        <div class="input-group">
+<%--        <div class="input-group">
             <asp:Label runat="server" Text="Customer Email Address:"></asp:Label>
             <asp:TextBox ID="TextBox5CustEmailAdd" runat="server" BorderStyle="Solid" Width="100%" Height="30px"></asp:TextBox>
         </div>
-    </div>
-                <br /><br /><br /><br /> <br /><br /><br /><br />     
+    </div>--%>
+                <br /><br /><br />     
     <div class="container">
         <h3>Medical Aid Details</h3>
         <asp:CheckBox ID="CheckBox1" runat="server" Text="Has Medical Aid?" />
@@ -136,7 +136,7 @@
                     <asp:ControlParameter ControlID="TextBox4DOB" DbType="Date" Name="DOB" PropertyName="Text" />
                     <asp:ControlParameter ControlID="TextBoxCustNumber" Name="ContactNo" PropertyName="Text" Type="String" />
                     <asp:ControlParameter ControlID="TextBoxAdress" Name="Address" PropertyName="Text" Type="String" />
-                    <asp:ControlParameter ControlID="TextBox5CustEmailAdd" Name="CustEmailAddress" PropertyName="Text" Type="String" />
+                    <asp:Parameter Name="CustEmailAddress" Type="String" />
                     <asp:ControlParameter ControlID="CheckBox1" Name="hasMedicalAid" PropertyName="Checked" Type="Boolean" />
                     <asp:ControlParameter ControlID="TextBox6MedicalAN" Name="MedAidName" PropertyName="Text" Type="String" />
                     <asp:ControlParameter ControlID="TextBox7MMNumber" Name="MainMemberID" PropertyName="Text" Type="String" />

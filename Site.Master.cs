@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Web.Optimization;
 
 
 
@@ -84,9 +85,16 @@ namespace Townbush_Pharmacy_Website
 
                 try
                 {
+                    int count = userName.Count(c => c == '.');
+                    int index;
+
                     userName = SanitizeUsername(userName);
-                    int index = userName.IndexOf('@');
-                    GreetingLabel.Text = (userName.Substring(index));
+                    if (count > 1) { index = userName.IndexOf('.'); }
+                    else { index = userName.IndexOf('@'); }
+
+                    string capitalized = char.ToUpper(userName[0]) + userName.Substring(1,index);
+
+                    GreetingLabel.Text = "Hi " + (capitalized.Substring(0,index));
                 }
                 catch (Exception ex)
                 {
@@ -112,7 +120,6 @@ namespace Townbush_Pharmacy_Website
                 //}
 
             }
-
         }
 
         private string IsUserInDatabase(string email)

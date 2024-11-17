@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace Townbush_Pharmacy_Website.Account
 {
@@ -23,7 +24,7 @@ namespace Townbush_Pharmacy_Website.Account
                 string dobString = TextBox4DOB.Text.Trim();
                 string contactNo = TextBoxCustNumber.Text.Trim();
                 string address = TextBoxAdress.Text.Trim();
-                string email = TextBox5CustEmailAdd.Text.Trim();
+                //string email = TextBox5CustEmailAdd.Text.Trim();
                 bool hasMedicalAid = CheckBox1.Checked;
                 string medAidName = TextBox6MedicalAN.Text.Trim();
                 string mainMemberID = TextBox7MMNumber.Text.Trim();
@@ -38,7 +39,7 @@ namespace Townbush_Pharmacy_Website.Account
                 }
 
                 // Check if customer already exists
-                if (CustomerExists(custID, email, contactNo))
+                if (CustomerExists(custID, contactNo))
                 {
                     ClearTextBoxes();
                     Response.Write("<script>alert('Customer with the same ID, Email, or Contact Number already exists in the database.');</script>");
@@ -47,7 +48,7 @@ namespace Townbush_Pharmacy_Website.Account
                 }
 
                 // Insert new customer\
-
+                SqlDSCustomer.InsertParameters["CustEmailAddress"].DefaultValue = HttpContext.Current.User.Identity.Name;
                 SqlDSCustomer.Insert();
 
                 Response.Write("<script>alert('Added to Customer Database');</script>");
@@ -60,17 +61,17 @@ namespace Townbush_Pharmacy_Website.Account
             }
         }
 
-        private bool CustomerExists(string custID, string email, string contactNo)
+        private bool CustomerExists(string custID, string contactNo)
         {
             bool exists = false;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM Customer WHERE CustID = @CustID OR CustEmailAddress = @CustEmailAddress OR ContactNo = @ContactNo";
+                string query = "SELECT COUNT(*) FROM Customer WHERE CustID = @CustID OR ContactNo = @ContactNo";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@CustID", custID);
-                    cmd.Parameters.AddWithValue("@CustEmailAddress", email);
+                    //cmd.Parameters.AddWithValue("@CustEmailAddress", email);
                     cmd.Parameters.AddWithValue("@ContactNo", contactNo);
 
                     int count = (int)cmd.ExecuteScalar();
@@ -89,7 +90,7 @@ namespace Townbush_Pharmacy_Website.Account
             TextBox4DOB.Text = string.Empty;
             TextBoxCustNumber.Text = string.Empty;
             TextBoxAdress.Text = string.Empty;
-            TextBox5CustEmailAdd.Text = string.Empty;
+            //TextBox5CustEmailAdd.Text = string.Empty;
             CheckBox1.Checked = false;
             TextBox6MedicalAN.Text = string.Empty;
             TextBox7MMNumber.Text = string.Empty;
