@@ -15,15 +15,6 @@ namespace Townbush_Pharmacy_Website
     {
 
         /// <summary>
-        /// Namelbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Namelbl;
-
-        /// <summary>
         /// NametxtBx control.
         /// </summary>
         /// <remarks>
@@ -31,15 +22,6 @@ namespace Townbush_Pharmacy_Website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NametxtBx;
-
-        /// <summary>
-        /// SurnameLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SurnameLbl;
 
         /// <summary>
         /// SurnameTxtBx control.
@@ -51,15 +33,6 @@ namespace Townbush_Pharmacy_Website
         protected global::System.Web.UI.WebControls.TextBox SurnameTxtBx;
 
         /// <summary>
-        /// EmailLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailLbl;
-
-        /// <summary>
         /// EmailTxtBx control.
         /// </summary>
         /// <remarks>
@@ -69,15 +42,6 @@ namespace Townbush_Pharmacy_Website
         protected global::System.Web.UI.WebControls.TextBox EmailTxtBx;
 
         /// <summary>
-        /// PhoneLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PhoneLbl;
-
-        /// <summary>
         /// PhoneTxtBx control.
         /// </summary>
         /// <remarks>
@@ -85,15 +49,6 @@ namespace Townbush_Pharmacy_Website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PhoneTxtBx;
-
-        /// <summary>
-        /// PkLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PkLbl;
 
         /// <summary>
         /// ddlShippingMethod control.

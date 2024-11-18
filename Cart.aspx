@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <section class="cart__section" style="background: url(Resources/twoBags.jpg) center/cover;">
+    <section class="cart__section" style="/*background: url(Resources/twoBags.jpg) center/cover;*/">
 
         <br />
         <br />
