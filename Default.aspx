@@ -43,8 +43,7 @@
                         <img src="Resources/5.png" alt="" class="sneaker__img">
                         <span class="sneaker__name">Panado Syrup</span>
                         <span class="sneaker__price">$10.99 <br> <del>$12.99</del></span>
-                        <a href="" class="button-light">Add to Cart <i
-                                class='bx bx-right-arrow-alt button-icon'></i></a>
+                        <a href="" class="button-light">Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
                     </article>
 
                     <article class="sneaker">

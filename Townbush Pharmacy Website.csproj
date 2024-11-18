@@ -274,6 +274,14 @@
     <None Include="Resources\Woman-drinking-water.jpg" />
     <None Include="Resources\ZuluMan.jpg" />
     <None Include="Resources\9.png" />
+    <None Include="Resources\html_table.jpg" />
+    <None Include="Resources\redBags.jpg" />
+    <None Include="Resources\greenBags.jpg" />
+    <None Include="Resources\store.jpg" />
+    <None Include="Resources\womanBags.jpg" />
+    <None Include="Resources\twoBags.jpg" />
+    <None Include="Resources\tools.jpg" />
+    <None Include="Resources\darkScene.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />

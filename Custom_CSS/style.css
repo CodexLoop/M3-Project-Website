@@ -1992,12 +1992,11 @@ body.dark-theme {
     .home__shape {
         width: 376px;
         height: 376px;
-        ;
     }
 
-    .home_img {
+    .home__img {
         width: 470px;
-        top: 3.5rem;
+        top: .5rem;
         right: 0;
         left: -3rem;
     }

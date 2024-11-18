@@ -24,7 +24,7 @@ namespace Townbush_Pharmacy_Website
                 LoginLinkButton.Visible = true;
 
                 // Hide the cart elements
-                Button2.Visible = false;
+                //Button2.Visible = false;
                 GridView1.Visible = false;
                 Button1.Visible = false;
                 TotalAmountLabel.Visible = false;
@@ -38,7 +38,7 @@ namespace Townbush_Pharmacy_Website
                 // Inform the admin that they don't need to view the cart
                 LoginMessage.Visible = true;
                 LoginMessage.Text = "As an Employee/Admin, you do not need to view the cart.";
-                Button2.Visible = false; // Hide the button to navigate to products
+                //Button2.Visible = false; // Hide the button to navigate to products
                 GridView1.Visible = false; // Hide the cart display elements
                 Button1.Visible = false; // Hide checkout button
                 TotalAmountLabel.Visible = false; // Hide total label
