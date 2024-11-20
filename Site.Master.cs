@@ -108,17 +108,14 @@ namespace Townbush_Pharmacy_Website
                 {
                     // User exists in the database
                     AdminLinks.Visible = true; // Show admin links (you can change this logic as needed)
+                    //AccountLinks.Visible = false; // dont show the "Account" link
+
                 }
                 else if (userRole == "Customer")
                 {
                     AdminLinks.Visible = false; // Hide admin links if user is not found
-                    //CustomerLinks.Visible = true;
+                    //customerAccountLink.Visible = true; // Show the "Account" link
                 }
-                //else
-                //{
-                //    //AdminLinks.Visible = false; // Hide admin links if user is not found
-                //}
-
             }
         }
 

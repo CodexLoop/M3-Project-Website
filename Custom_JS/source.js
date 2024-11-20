@@ -95,6 +95,17 @@
 
 
     window.addEventListener('load', () => {
+        if (sessionStorage.getItem('hiddenClass') == null) {
+            sessionStorage.setItem('hiddenClass', 'hide')
+        }
+        if (sessionStorage.getItem('hiddenClass') == 'hide') {
+            hidden.classList.add('hide')
+        }
+        else {
+            hidden.classList.remove('hide')
+        }
+
+
         if (sessionStorage.getItem('PreviouslyActiveLinkID') == null) {
             sessionStorage.setItem('ActiveLinkID', 'home_link');
             sessionStorage.setItem('PreviouslyActiveLinkID', 'home_link');
@@ -116,4 +127,47 @@
             sessionStorage.setItem('PreviouslyActiveLinkID', currentID);
         }
     });
+
+    /*================ SCROLL REVEAL ANIMATION ================ */
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 2000,
+        delay: 300,
+        // reset: true // Animations repeat
+    })
+
+    sr.reveal(`.home__name, .home__info,
+		   .about__container .section__title-1, .about__info,
+		   .contact__social, .contact__data,
+           .section-title, .new__mens,
+           .newsletter__container, .section__title-1,
+           .section__title-2`,
+        { origin: 'left' })
+    sr.reveal(`.about__image, .contact__mail,
+           .offer__container`, { origin: 'right' })
+
+    sr.reveal(`.services__card, .projects__card,
+           .sneaker, .collection__card`, { interval: 100 })
+
+    sr.reveal(`.new__sneaker-card`, { origin: 'right', interval: 100 })
+
+
+
+    const select = document.querySelectorAll('select')
+    select.forEach(n => n.addEventListener('change', event => event.preventDefault()));
+    const hidden = document.getElementById('hidden')
+
+    function deliveryDetails() {
+        let option = document.querySelectorAll('option')
+
+        if (!option[2].selected) {
+            sessionStorage.setItem('hiddenClass', 'hide')
+        }
+        else {
+            sessionStorage.setItem('hiddenClass', 'show')
+        }
+    }
+
+    select[0].addEventListener('change', (e) => { deliveryDetails(e) })
 })

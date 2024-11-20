@@ -60,15 +60,6 @@ namespace Townbush_Pharmacy_Website
         protected global::System.Web.UI.WebControls.DropDownList ddlShippingMethod;
 
         /// <summary>
-        /// Addlbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Addlbl;
-
-        /// <summary>
         /// AddTxtBx control.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace Townbush_Pharmacy_Website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AddTxtBx;
-
-        /// <summary>
-        /// Citylbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Citylbl;
 
         /// <summary>
         /// CityTxtBx control.
@@ -96,15 +78,6 @@ namespace Townbush_Pharmacy_Website
         protected global::System.Web.UI.WebControls.TextBox CityTxtBx;
 
         /// <summary>
-        /// PClbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PClbl;
-
-        /// <summary>
         /// PCTxtBx control.
         /// </summary>
         /// <remarks>
@@ -112,15 +85,6 @@ namespace Townbush_Pharmacy_Website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PCTxtBx;
-
-        /// <summary>
-        /// ProvLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProvLbl;
 
         /// <summary>
         /// ddlProv control.

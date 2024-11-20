@@ -90,6 +90,13 @@
                             <li class="nav__item">
                                 <a runat="server" id="stock_link" class="nav-link nav__link" href="~/Account/Stock" title="View your Stock">Stock</a>
                             </li>
+                            <li class="nav__item">
+                                <a runat="server" id="A1" class="nav-link nav__link" href="~/Account/EmployeeViewOrders" title="View Orders">Orders</a>
+                            </li>
+                            <li class="nav__item">
+                                <a runat="server" id="A2" class="nav-link nav__link" href="~/Account/EmployeesViewSale" title="View Sales">Sales</a>
+                            </li>
+                            
                         </asp:PlaceHolder>
 
                         <li class="nav__item">
@@ -99,12 +106,17 @@
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <ul class="navbar-nav navbar-right">
-                                    <li class="nav__item"><a runat="server" id="login_link" class="nav-link nav__link" href="~/Account/Login">Log in</a></li>
+                                    <li class="nav__item">
+                                        <a runat="server" id="login_link" class="nav-link nav__link" href="~/Account/Login">Log in</a>
+
+                                    </li>
                                 </ul>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 <ul class="navbar-nav navbar-right">
-                                    <li class="nav__item"><a runat="server" id="account_link" class="nav-link nav__link" href="~/Account/Manage" title="Manage your account">Account</a></li>
+                                    <li class="nav__item">
+                                        <a runat="server" id="account_link" class="nav-link nav__link" href="~/Account/Manage" title="Manage your account">Account</a>
+                                    </li>
                                 </ul>
                             </LoggedInTemplate>
                         </asp:LoginView>
@@ -222,4 +234,6 @@
 </html>
 
 <!--== JAVASCRIPT ==-->
+<script src="Custom_JS/scrollreveal.min.js"></script>
 <script src="Custom_JS/source.js"></script>
+

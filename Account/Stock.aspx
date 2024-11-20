@@ -87,15 +87,10 @@
                     </UpdateParameters>
                 </asp:SqlDataSource>
         <br /><br /><br />
-                <br /><br /><br />
-        <br /><br /><br />
-        <br /><br /><br />
 
 
     </div>
 <div class="container">
-            <br /><br /><br />            <br /><br /><br />            <br /><br /><br />
-                <br /><br /><br />            <br /><br /><br />            <br /><br /><br />
 
 
 

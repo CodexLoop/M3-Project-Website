@@ -60,13 +60,13 @@ namespace Townbush_Pharmacy_Website
                 ShipLbl.Text = "Shipping Price: R" +shippingPrice.ToString("F2");
 
                 // Hide address-related fields
-                Addlbl.Visible = false;
+                //Addlbl.Visible = false;
                 AddTxtBx.Visible = false;
-                Citylbl.Visible = false;
+                //Citylbl.Visible = false;
                 CityTxtBx.Visible = false;
-                PClbl.Visible = false;
+                //PClbl.Visible = false;
                 PCTxtBx.Visible = false;
-                ProvLbl.Visible = false;
+                //ProvLbl.Visible = false;
                 ddlProv.Visible = false;
                 
                 Session["Address"] = null;
@@ -79,13 +79,13 @@ namespace Townbush_Pharmacy_Website
             {
                 Session["ShippingMethod"] = "Delivery";
                 // Show address-related fields
-                Addlbl.Visible = true;
+                //Addlbl.Visible = true;
                 AddTxtBx.Visible = true;
-                Citylbl.Visible = true;
+                //Citylbl.Visible = true;
                 CityTxtBx.Visible = true;
-                PClbl.Visible = true;
+                //PClbl.Visible = true;
                 PCTxtBx.Visible = true;
-                ProvLbl.Visible = true;
+                //ProvLbl.Visible = true;
                 ddlProv.Visible = true;
 
                 Session["Address"] = AddTxtBx.Text;

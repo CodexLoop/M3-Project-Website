@@ -5,8 +5,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-        <br />
-        <br />
+    <br />
+    <br />
     <div class="orders__body">
         <br />
         <br />
@@ -22,7 +22,7 @@
             <div class="form-row">
                 <div class="input-data">
                     <%--<asp:Label ID="Namelbl" runat="server" Text="First Name: "></asp:Label>--%>
-                    <asp:TextBox ID="NametxtBx" runat="server" BorderStyle="None"></asp:TextBox>
+                    <asp:TextBox ID="NametxtBx" runat="server" EnableTheming="False"></asp:TextBox>
                     <div class="underline"></div>
                     <label>First Name</label>
                 </div>
@@ -65,42 +65,63 @@
                 </div>
             </div>
 
-            <div style="display: block;">
-                <asp:Label ID="Addlbl" runat="server" Text="Address: " Visible="False"></asp:Label>
-                <asp:TextBox ID="AddTxtBx" runat="server" Visible="False"></asp:TextBox>
-                <asp:Label ID="Citylbl" runat="server" Text="City: " Visible="False"></asp:Label>
-                <asp:TextBox ID="CityTxtBx" runat="server" Visible="False"></asp:TextBox>
-                <asp:Label ID="PClbl" runat="server" Text="Postal Code: " Visible="False"></asp:Label>
-                <asp:TextBox ID="PCTxtBx" runat="server" Visible="False"></asp:TextBox>
-                <asp:Label ID="ProvLbl" runat="server" Text="Province: " Visible="False"></asp:Label>
-            </div>
+            <div id="hidden" class="hide">
+                <div class="form-row">
+                    <div class="input-data">
+                        <%--<asp:Label ID="Addlbl" runat="server" Text="Address: " Visible="False"></asp:Label>--%>
+                        <asp:TextBox ID="AddTxtBx" runat="server" Visible="False"></asp:TextBox>
+                        <div class="underline"></div>
+                        <label>Address</label>
+                    </div>
 
-            <div class="input-data">
-                <asp:DropDownList ID="ddlProv" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProv_SelectedIndexChanged">
-                    <asp:ListItem Text="Select Province" />
-                    <asp:ListItem Text="Gauteng" Value="100" />
-                    <asp:ListItem Text="Western Cape" Value="175" />
-                    <asp:ListItem Text="KwaZulu-Natal" Value="50" />
-                    <asp:ListItem Text="Limpopo" Value="120" />
-                    <asp:ListItem Text="Northern Cape" Value="150" />
-                    <asp:ListItem Text="Mpumalanga" Value="160" />
-                    <asp:ListItem Text="Free State" Value="75" />
-                    <asp:ListItem Text="Eastern Cape" Value="130" />
-                    <asp:ListItem Text="North-West" Value="200" />
-                </asp:DropDownList>
-                <div class="underline"></div>
+                    <div class="input-data">
+                        <%--<asp:Label ID="Citylbl" runat="server" Text="City: " Visible="False"></asp:Label>--%>
+                        <asp:TextBox ID="CityTxtBx" runat="server" Visible="False"></asp:TextBox>
+                        <div class="underline"></div>
+                        <label>City</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-data">
+                        <%--<asp:Label ID="PClbl" runat="server" Text="Postal Code: " Visible="False"></asp:Label>--%>
+                        <asp:TextBox ID="PCTxtBx" runat="server" Visible="False"></asp:TextBox>
+                        <div class="underline"></div>
+                        <label>Postal code</label>
+                    </div>
+
+                    <div class="input-data">
+                        <%--<asp:Label ID="ProvLbl" runat="server" Text="Province: " Visible="False"></asp:Label>--%>
+                        <div class="input-data">
+                            <asp:DropDownList ID="ddlProv" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProv_SelectedIndexChanged">
+                                <asp:ListItem Text="Select Province" />
+                                <asp:ListItem Text="Gauteng" Value="100" />
+                                <asp:ListItem Text="Western Cape" Value="175" />
+                                <asp:ListItem Text="KwaZulu-Natal" Value="50" />
+                                <asp:ListItem Text="Limpopo" Value="120" />
+                                <asp:ListItem Text="Northern Cape" Value="150" />
+                                <asp:ListItem Text="Mpumalanga" Value="160" />
+                                <asp:ListItem Text="Free State" Value="75" />
+                                <asp:ListItem Text="Eastern Cape" Value="130" />
+                                <asp:ListItem Text="North-West" Value="200" />
+                            </asp:DropDownList>
+                             <span>Select Province</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="form-row submit-btn">
                 <div class="input-data">
                     <div class="inner"></div>
-                    <asp:Button ID="PayBtn" runat="server" Text="submit" OnClick="PayBtn_Click" />
+                    <asp:Button ID="PayBtn" runat="server" Text="Proceed to Payment" OnClick="PayBtn_Click" />
                 </div>
             </div>
 
             <div>
-                <asp:Label ID="TotalAmountLabel" runat="server" Text="Total Amount: "></asp:Label>
-                <asp:Label ID="ShipLbl" runat="server" Text="Label"></asp:Label>
+                <asp:Label CssClass="payment" ID="TotalAmountLabel" runat="server" Text="Total Amount: "></asp:Label>
+                <br />
+                <asp:Label CssClass="payment" ID="ShipLbl" runat="server" Text="Label"></asp:Label>
             </div>
         </div>
     </div>

@@ -15,6 +15,15 @@ namespace Townbush_Pharmacy_Website.Account
     {
 
         /// <summary>
+        /// MessageError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MessageError;
+
+        /// <summary>
         /// TextBox1CustID control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace Townbush_Pharmacy_Website.Account
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxAdress;
+
+        /// <summary>
+        /// TextBox5CustEmailAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox5CustEmailAdd;
 
         /// <summary>
         /// CheckBox1 control.

@@ -84,6 +84,7 @@ namespace Townbush_Pharmacy_Website.Account
                 // Customer is registered, log them in
                 SignInCustomer(email, password);
             }
+
         }
 
         private bool EmployeeExistsInDatabase(string email)

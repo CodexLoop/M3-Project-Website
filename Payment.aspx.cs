@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.IO;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -141,6 +142,20 @@ namespace Townbush_Pharmacy_Website
             System.IO.File.WriteAllText(fullPath, receiptContent.ToString());
 
             string receiptLink = "~/Receipts/" + fileName;
+            string fullFilePath = Server.MapPath(receiptLink);
+
+            if (File.Exists(fullFilePath))
+            {
+                Response.Clear();
+                Response.ContentType = "application/octet-stream"; // Generic binary stream
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + fileName);
+                Response.WriteFile(fullFilePath);
+                Response.End();
+            }
+            else
+            {
+                Response.Write("Error: File not found.");
+            }
 
             string salesQuery = @"INSERT INTO OnlineSales (UserID, DateTime, TotalAmt, Receipt)
                           VALUES (@UserID, @DateTime, @TotalAmt, @Receipt)";
