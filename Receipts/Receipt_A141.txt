@@ -1,0 +1,15 @@
+Mnqobi Thusi
+mnqobit@gmail.com
+0781551164
+-----------------------------------------
+Receipt for Order ID: A141
+Date: 2024-11-20 12:12
+-----------------------------------------
+Shipping Address:
+Address: Dube Toll Cemetry Rd
+City: Stanger
+Province: 200
+Postal Code: 4450
+PANADO PAEDIATRIC (ID: 5) - Quantity: 1, Price: R38,99, Line Total: R38,99
+Shipping Price: R200,00
+Total Amount: R238,99
